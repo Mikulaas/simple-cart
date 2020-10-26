@@ -30,10 +30,7 @@ export function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Topbar
-          shoppingCartCount={itemsInCart}
-          handleClearCart={handleClearCart}
-        />
+        <Topbar count={itemsInCart} handleClearCart={handleClearCart} />
 
         <Grid container justify="center" spacing={4}>
           {itemsToAdd.map(({ type, price }) => (

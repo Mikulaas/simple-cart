@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Topbar = ({ shoppingCartCount, handleClearCart }) => {
+export const Topbar = ({ count, handleClearCart }) => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -43,7 +43,7 @@ export const Topbar = ({ shoppingCartCount, handleClearCart }) => {
       <AppBar>
         <Toolbar className={classes.toolbar}>
           <Typography component="h2">Example app</Typography>
-          <Badge badgeContent={shoppingCartCount} color="secondary">
+          <Badge badgeContent={count} color="secondary">
             <IconButton size="small" onClick={handleOpenMenu}>
               <ShoppingCartOutlinedIcon className={classes.icon} />
             </IconButton>
