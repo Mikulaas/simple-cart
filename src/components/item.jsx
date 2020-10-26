@@ -6,8 +6,8 @@ import {
   Typography,
   createStyles,
 } from "@material-ui/core";
-import AppleIcon from "@material-ui/icons/Apple";
-import AndroidIcon from "@material-ui/icons/Android";
+import LocalSeeIcon from "@material-ui/icons/LocalSee";
+import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
@@ -42,9 +42,9 @@ const styles = createStyles({
 function getIconFromType(type) {
   switch (type) {
     case "TYPE_1":
-      return <AppleIcon />;
+      return <BeachAccessIcon />;
     case "TYPE_2":
-      return <AndroidIcon />;
+      return <LocalSeeIcon />;
     case "TYPE_3":
       return <FitnessCenterIcon />;
     default:
