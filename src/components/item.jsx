@@ -3,15 +3,15 @@ import {
   Card,
   CardActions,
   CardContent,
-  makeStyles,
   Typography,
 } from "@material-ui/core";
 import AppleIcon from "@material-ui/icons/Apple";
 import AndroidIcon from "@material-ui/icons/Android";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
-import React from "react";
+import React, { Component } from "react";
+import { withStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles((theme) => ({
+const styles = {
   root: {
     width: 200,
     height: 200,
@@ -36,36 +36,40 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     padding: "10px 16px",
   },
-}));
+};
 
 function getIconFromType(type) {
   switch (type) {
-    case "1":
+    case "TYPE_1":
       return <AppleIcon />;
-    case "2":
+    case "TYPE_2":
       return <AndroidIcon />;
-    case "3":
+    case "TYPE_3":
       return <FitnessCenterIcon />;
     default:
       return <></>;
   }
 }
 
-export const Item = ({ type, price, addItemToShoppingCart }) => {
-  const classes = useStyles();
-  return (
-    <Card className={classes.root}>
-      <CardContent classes={{ root: classes.content }}>
-        <div className={classes.icon}>{getIconFromType(type)}</div>
-      </CardContent>
-      <CardActions className={classes.actions}>
-        <Typography component="span" className={classes.price}>
-          {price} $
-        </Typography>
-        <Button onClick={addItemToShoppingCart} size="small">
-          Add to cart
-        </Button>
-      </CardActions>
-    </Card>
-  );
-};
+class Item extends Component {
+  render() {
+    const { type, price, addItemToShoppingCart, classes } = this.props;
+    return (
+      <Card className={classes.root}>
+        <CardContent classes={{ root: classes.content }}>
+          <div className={classes.icon}>{getIconFromType(type)}</div>
+        </CardContent>
+        <CardActions className={classes.actions}>
+          <Typography component="span" className={classes.price}>
+            {price} $
+          </Typography>
+          <Button onClick={addItemToShoppingCart} size="small" color="primary">
+            Add to cart
+          </Button>
+        </CardActions>
+      </Card>
+    );
+  }
+}
+
+export default withStyles(styles)(Item);

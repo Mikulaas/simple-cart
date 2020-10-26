@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     color: "white",
   },
+  menu: {
+    marginTop: 30,
+  },
 }));
 
 export const Topbar = ({ shoppingCartCount, handleClearCart }) => {
@@ -47,7 +50,11 @@ export const Topbar = ({ shoppingCartCount, handleClearCart }) => {
           </Badge>
         </Toolbar>
       </AppBar>
-      <Menu open={Boolean(anchorEl)} anchorEl={anchorEl}>
+      <Menu
+        open={Boolean(anchorEl)}
+        anchorEl={anchorEl}
+        className={classes.menu}
+      >
         <MenuItem onClick={onClearCart}>Clear cart</MenuItem>
       </Menu>
     </div>

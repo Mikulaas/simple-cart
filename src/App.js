@@ -2,20 +2,20 @@ import React, { useState } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
 import { Topbar } from "./components/topbar";
-import { Item } from "./components/item";
+import Item from "./components/item";
 import { Grid } from "@material-ui/core";
 
 const itemsToAdd = [
   {
-    type: "1",
+    type: "TYPE_1",
     price: 10,
   },
   {
-    type: "2",
+    type: "TYPE_2",
     price: 20,
   },
   {
-    type: "3",
+    type: "TYPE_3",
     price: 30,
   },
 ];
