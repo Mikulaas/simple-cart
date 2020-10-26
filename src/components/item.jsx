@@ -4,6 +4,7 @@ import {
   CardActions,
   CardContent,
   Typography,
+  createStyles,
 } from "@material-ui/core";
 import AppleIcon from "@material-ui/icons/Apple";
 import AndroidIcon from "@material-ui/icons/Android";
@@ -11,7 +12,7 @@ import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
 
-const styles = {
+const styles = createStyles({
   root: {
     width: 200,
     height: 200,
@@ -36,7 +37,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "10px 16px",
   },
-};
+});
 
 function getIconFromType(type) {
   switch (type) {
