@@ -24,12 +24,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Topbar = ({ count, handleClearCart }) => {
+interface TopbarProps {
+  count: number;
+  handleClearCart: () => void;
+}
+
+export const Topbar: React.FC<TopbarProps> = ({ count, handleClearCart }) => {
   const classes = useStyles();
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-  const handleOpenMenu = (e) => {
+  const handleOpenMenu = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(e.currentTarget);
   };
 

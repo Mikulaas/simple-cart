@@ -5,17 +5,28 @@ import { Topbar } from "./components/topbar";
 import Item from "./components/item";
 import { Grid } from "@material-ui/core";
 
-const itemsToAdd = [
+export enum ItemTypeEnum {
+  TYPE_1,
+  TYPE_2,
+  TYPE_3,
+}
+
+export interface ItemToAdd {
+  type?: ItemTypeEnum;
+  price: number;
+}
+
+const itemsToAdd: ItemToAdd[] = [
   {
-    type: "TYPE_1",
+    type: ItemTypeEnum.TYPE_1,
     price: 10,
   },
   {
-    type: "TYPE_2",
+    type: ItemTypeEnum.TYPE_2,
     price: 20,
   },
   {
-    type: "TYPE_3",
+    type: ItemTypeEnum.TYPE_3,
     price: 30,
   },
 ];

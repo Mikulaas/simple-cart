@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Specify ECMAScript target version
+    "lib": [
+      // List of library files to be included in the compilation
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true, // Allow JavaScript files to be compiled.
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts).
+    "esModuleInterop": true, // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable --allowSyntheticDefaultImports for typesystem compatibility.
+    "allowSyntheticDefaultImports": true, //Allow default imports from modules with no default export.
+    "strict": true, // Enable all strict type checking options.
+    "forceConsistentCasingInFileNames": true, //Disallow inconsistently-cased references to the same file.
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement.
+    "module": "esnext", // Specifies module code generation: "None", "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015" or "ESNext".
+    "moduleResolution": "node", // Determine how modules get resolved.
+    "resolveJsonModule": true, // Include modules imported with .json extension.
+    "isolatedModules": true, // Perform additional checks to ensure that separate compilation
+    "noEmit": true, // Do not emit outputs
+    "jsx": "react" // Support JSX in .tsx files: "react", "preserve", "react-native". See JSX.
+  },
+  "include": ["src"]
+}

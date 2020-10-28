@@ -5,12 +5,14 @@ import {
   CardContent,
   Typography,
   createStyles,
+  WithStyles,
 } from "@material-ui/core";
 import LocalSeeIcon from "@material-ui/icons/LocalSee";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
+import { ItemToAdd, ItemTypeEnum } from "../App";
 
 const styles = createStyles({
   root: {
@@ -39,20 +41,24 @@ const styles = createStyles({
   },
 });
 
-function getIconFromType(type) {
+function getIconFromType(type?: ItemTypeEnum) {
   switch (type) {
-    case "TYPE_1":
+    case ItemTypeEnum.TYPE_1:
       return <BeachAccessIcon />;
-    case "TYPE_2":
+    case ItemTypeEnum.TYPE_2:
       return <LocalSeeIcon />;
-    case "TYPE_3":
+    case ItemTypeEnum.TYPE_3:
       return <FitnessCenterIcon />;
     default:
       return <></>;
   }
 }
 
-class Item extends Component {
+interface ItemProps extends ItemToAdd, WithStyles<typeof styles> {
+  addItemToShoppingCart: () => void;
+}
+
+class Item extends Component<ItemProps> {
   render() {
     const { type, price, addItemToShoppingCart, classes } = this.props;
     return (
